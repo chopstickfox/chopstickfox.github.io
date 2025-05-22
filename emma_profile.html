@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <link href="https://fonts.googleapis.com/css2?family=Syncopate&display=swap" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Emma Yu</title>
+        <link rel="icon" href="pinkstar.png" type="image/png">
+    </head>
+    <script src="script.js"></script>
+    <body>
+        <div class="intro">
+            <img src="pinkstar.png" class="star">
+            <h1 id="intro-title"><b>hello, i'm emma!</b></h1>
+            <img src="pinkstar.png" class="star">
+        </div>
+        <div class="button-container">
+            <button class="image-button" id="button1" onclick="toggleTab(this, 'tab1')"></button>
+            <div id="tab1" class="tabcontent">
+                <img src="aboutme.png" class="aboutme">
+            </div>
+
+            <button class="image-button" id="button2" onclick="toggleTab(this, 'tab2')"></button>
+            <div id="tab2" class="tabcontent">
+                <p>vye</p>
+            </div>
+
+            <button class="image-button" id="button3" onclick="toggleTab(this, 'tab3')"></button>
+            <div id="tab3" class="tabcontent">
+                <p>rye</p>
+            </div>
+        </div>
+    </body>
+</html>

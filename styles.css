@@ -1,0 +1,142 @@
+h1 {
+    color: rgb(255, 245, 237);
+}
+
+h1 {
+    font-family: 'Syncopate', sans-serif;
+    font-size: 30px;
+    margin-left: 10px;
+}
+
+.button-container {
+    position: relative; 
+    margin-top: 14%;
+    min-height: 220px;
+    display: flex;
+    justify-content: flex-start; /* Align buttons to the left by default */
+    gap: 20px; /* Consistent spacing between buttons */
+}
+
+.button-row {
+    display: flex; /* Ensure buttons are in a horizontal row */
+    gap: 20px; /* Adds consistent spacing between buttons */
+    align-items: center; /* Vertically align the buttons */
+    position: relative;
+}
+
+.aboutme{
+    width:50vw;
+    height:auto;
+}
+
+.tabcontent {
+    display: none;
+    margin-left: 30px;
+    color: #14073f;
+    border-radius: 20px;
+    padding: 30px;
+    min-width: 200px;
+    min-height: 80px;
+    z-index: 10;
+    position: static;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+.image-button {
+    border-radius: 20px;
+    width: 30%; /* Adjust as needed to fit your layout */
+    aspect-ratio: 1/1;
+    border: none;
+    background-color: rgb(20, 7, 63);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    animation: floatUpDown 8s ease-in-out infinite;
+    transition: transform 0.2s ease; 
+}
+
+#button1 {
+    background-image: url('button1.png'); 
+    animation-delay: 0s;
+}
+
+#button2 {
+    background-image: url('button2.png');
+    animation-delay: 1s;
+}
+
+#button3 {
+    animation-delay: 2s;
+}
+
+.image-button:active {
+    animation: none; 
+    transform: scale(0.95);  
+}
+
+@keyframes floatUpDown {
+    0%, 100% {
+        transform: translateY(0); 
+    }
+    25% {
+        transform: translateY(-10px); 
+    }
+    50% {
+        transform: translateY(10px); 
+    }
+    75% {
+        transform: translateY(-10px); 
+    }
+}
+
+.intro {
+    margin-top: 70px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 115px;
+}
+
+.star {
+    width: 95px;
+    height: 65px;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+
+body {
+    background-color: rgb(20, 7, 63);
+    background-image: url("starry.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Ensures buttons appear in a horizontal row with consistent spacing */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* Consistent spacing between buttons */
+}
+
+@media (max-width: 768px) {
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 220px;
+    }
+
+    .button-row {
+        margin-bottom: 10px; /* Adjust spacing between rows if needed */
+    }
+
+    .tabcontent {
+        margin-left: 0; /* Adjust to remove the left margin for mobile view */
+    }
+}
