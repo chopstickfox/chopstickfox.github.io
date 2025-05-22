@@ -3,6 +3,7 @@
     <head>
         <link rel="stylesheet" href="styles.css">
         <link href="https://fonts.googleapis.com/css2?family=Syncopate&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@300&display=swap" rel="stylesheet">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Emma Yu</title>
@@ -10,25 +11,64 @@
     </head>
     <script src="script.js"></script>
     <body>
+        <audio id="button-click" src="click.mp3" preload="auto"></audio>
+    <script>
+        // Preload audio on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const audio = document.getElementById('button-click');
+            audio.load();
+        });
+
+        function playButtonSound() {
+            const audio = document.getElementById('button-click');
+            audio.pause(); // Stop if already playing
+            audio.currentTime = 0; // Rewind to start
+            audio.play();
+        }
+    </script>
         <div class="intro">
             <img src="pinkstar.png" class="star">
             <h1 id="intro-title"><b>Hello, I'm Emma!</b></h1>
             <img src="pinkstar.png" class="star">
         </div>
         <div class="button-container">
-            <button class="image-button" id="button1" onclick="toggleTab(this, 'tab1')"></button>
+            <button class="image-button" id="button1" onclick="playButtonSound(); toggleTab(this, 'tab1')"></button>
             <div id="tab1" class="tabcontent">
-                <img src="aboutme.png" class="aboutme">
+                <div class="tab-intro">
+                    <img src="pinkstar.png" class="star">
+                    <h2>My Biography</h2>
+                    <img src="pinkstar.png" class="star">
+                </div>
+                <p>Hi :) My name is Emma Yu, and I’m a sophomore student at Burlingame High School. I’m passionate in graphic, web and computer-aided design, as well as writing, philosophy, mechanical engineering, art and astrophysics. Outside of academics, I like biking, listening to music and dedicating my time, money and soul to FRC robotics.
+                </p>
+                <div class="tabcontent2">
+                    <div class="tab-intro">
+                        <img src="pinkstar.png" class="star">
+                        <h2>Favorites <3</h2>
+                        <img src="pinkstar.png" class="star">
+                    </div>
+                        <li>colors: red velvet, yellow ochre, violet, ballpoint-pen-blue</li>
+                </div>
             </div>
 
-            <button class="image-button" id="button2" onclick="toggleTab(this, 'tab2')"></button>
+            <button class="image-button" id="button2" onclick="playButtonSound(); toggleTab(this, 'tab2')"></button>
             <div id="tab2" class="tabcontent">
-                <p>vye</p>
+                <div class="tab-intro">
+                    <img src="pinkstar.png" class="star">
+                    <h2>APCS Final</h2>
+                    <img src="pinkstar.png" class="star">
+                </div>
+                <p>ahhahahahhaa here's my nonexistent compsci work</p>
             </div>
 
-            <button class="image-button" id="button3" onclick="toggleTab(this, 'tab3')"></button>
+            <button class="image-button" id="button3" onclick="playButtonSound(); toggleTab(this, 'tab3')"></button>
             <div id="tab3" class="tabcontent">
-                <p>rye</p>
+                <div class="tab-intro">
+                    <img src="pinkstar.png" class="star">
+                    <h2>Media Links</h2>
+                    <img src="pinkstar.png" class="star">
+                </div>
+                <p>this is probably going to be my linkedin and other contact information</p>
             </div>
         </div>
     </body>

@@ -21,6 +21,12 @@ function toggleTab(button, tabId) {
         if (button.id === 'button1') {
             introTitle.innerHTML = "<b>About Me</b>";
         }
+        if (button.id === 'button2') {
+            introTitle.innerHTML = "<b>Computer Science</b>";
+        }
+        if (button.id === 'button3') {
+            introTitle.innerHTML = "<b>Socials</b>";
+        }
 
         // Align buttons to the left after the click
         buttonContainer.style.justifyContent = 'flex-start';
@@ -30,12 +36,10 @@ function toggleTab(button, tabId) {
         // Hide tab content
         tab.classList.remove('active');
         button.classList.remove('active-tab-btn');
-        // Reset intro title if first button
-        if (button.id === 'button1') {
-            introTitle.innerHTML = "<b>Hello, I'm Emma!</b>";
-        }
+        introTitle.innerHTML = "<b>Hello, I'm Emma!</b>";
 
         // Keep buttons left-aligned
         buttonContainer.style.justifyContent = 'flex-start';
     }
+
 }
