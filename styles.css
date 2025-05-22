@@ -105,6 +105,7 @@ li {
 }
 
 #button3 {
+    background-image: url('button3.png');
     animation-delay: 2s;
     margin-left: 2.5%;
 }
