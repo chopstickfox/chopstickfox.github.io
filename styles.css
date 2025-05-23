@@ -137,6 +137,10 @@ li {
     animation-delay: 1.5s;
 }
 
+#button3.active-tab-btn {
+    margin-left: 5%;
+}
+
 .image-button:active {
     animation: none; 
     transform: scale(0.95);  
@@ -459,4 +463,9 @@ height: 100%;          /* or a fixed height */
     margin-top: 600px;
     font-family: 'Syncopate', sans-serif;
     font-size: 1.5vw;
+}
+
+#tab3.tabcontent {
+    margin-left: 0.001%;
+    width: 49vw;
 }
