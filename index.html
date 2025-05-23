@@ -11,21 +11,43 @@
     </head>
     <script src="script.js"></script>
     <body>
-        <audio id="button-click" src="click.mp3" preload="auto"></audio>
+        <audio id="ambient-sound" src="em(maj7).mp3" preload="auto"></audio>
         <script>
-            // Preload audio on page load
-            window.addEventListener('DOMContentLoaded', function() {
-                const audio = document.getElementById('button-click');
-                audio.load();
-            });
-
-            function playButtonSound() {
-                const audio = document.getElementById('button-click');
-                audio.pause(); // Stop if already playing
-                audio.currentTime = 0; // Rewind to start
-                audio.play();
+        document.addEventListener('DOMContentLoaded', function() {
+            const ambient = document.getElementById('ambient-sound');
+            if (ambient) {
+                ambient.volume = 0.4;
+                // Play on first user interaction (click, keydown, touch)
+                function playAmbientOnce() {
+                    ambient.currentTime = 0;
+                    ambient.play();
+                    // Remove listeners after first play
+                    window.removeEventListener('click', playAmbientOnce);
+                    window.removeEventListener('keydown', playAmbientOnce);
+                    window.removeEventListener('touchstart', playAmbientOnce);
+                }
+                window.addEventListener('click', playAmbientOnce);
+                window.addEventListener('keydown', playAmbientOnce);
+                window.addEventListener('touchstart', playAmbientOnce);
             }
+        });
         </script>
+        <audio id="button-click" src="click.mp3" preload="auto"></audio>
+            <script>
+                // Preload audio on page load
+                window.addEventListener('DOMContentLoaded', function() {
+                    const audio = document.getElementById('button-click');
+                    audio.load();
+                    audio.volume = 0.6; // Set volume to 70%
+                });
+
+                function playButtonSound() {
+                    const audio = document.getElementById('button-click');
+                    audio.pause(); // Stop if already playing
+                    audio.currentTime = 0; // Rewind to start
+                    audio.play();
+                }
+            </script>
         <div class="intro">
             <img src="pinkstar.png" class="star">
             <h1 id="intro-title"><b>Hello, I'm Emma!</b></h1>
