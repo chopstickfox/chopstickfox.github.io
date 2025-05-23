@@ -26,7 +26,7 @@ function toggleTab(button, tabId) {
             introTitle.innerHTML = "<b>Computer Science</b>";
         }
         if (button.id === 'button3') {
-            introTitle.innerHTML = "<b>Socials</b>";
+            introTitle.innerHTML = "<b>Social Media</b>";
         }
 
         // Align buttons to the left after the click
