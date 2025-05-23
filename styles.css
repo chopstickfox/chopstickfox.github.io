@@ -17,26 +17,42 @@ h2 {
     margin-top: -3px;
 }
 
+.button-label {
+    color: rgb(255, 245, 237);
+    font-family: 'Syncopate', sans-serif;
+    font-size: 2vw;
+    text-align: center;
+    margin-top: -0.02%;
+    margin-bottom: -0.02%;
+        display: inline;       /* or inline-block, but NOT block */
+    width: auto;
+    height: auto;
+    pointer-events: none;  /* Ensures clicks pass through to button */
+}
+
 p {
     color: rgb(255, 245, 237);
     font-family: 'Oxanium', sans-serif;
     font-weight: 10;
-    font-size: 1.75vw;
-    text-align: justify;
-    text-align-last: center;
-    margin-top: -5px;
+    font-size: 1.6vw;
+    text-align: start;
+    margin-top: -1px;
     line-height: 1.4;
 }
 
 li {
     color: rgb(255, 245, 237);
     font-family: 'Oxanium', sans-serif;
-    font-weight: 10;
-    font-size: 1.75vw;
+    font-weight: 300;
+    font-size: 1.6vw;
     text-align: start;
-    margin-left: 10px;
+    margin-left: 0;
     margin-top: -5px;
     line-height: 1.4;
+    list-style-position: inside;
+    text-indent: -1.2em;   /* Pull bullet left */
+    padding-left: 1.2em;   /* Push text right to align with paragraph */
+    margin-bottom: 10px
 }
 
 .button-container {
@@ -44,14 +60,22 @@ li {
     margin-top: 11%;
     min-height: 220px;
     display: flex;
+    align-items: flex-start;
     justify-content: flex-start; 
+    margin-right: 3.5%;
+    gap: 30px;
 }
 
 .button-row {
     display: flex;
-    gap: 10px; 
-    align-items: center; 
-    position: relative;
+    flex-direction: row;
+    gap: 20px;
+}
+
+@media (min-width: 600px) {
+    .button-row {
+        flex-direction: row;
+    }
 }
 
 .aboutme{
@@ -60,8 +84,6 @@ li {
 }
 
 .tabcontent {
-    display: none;
-    margin-left: 30px;
     color: rgb(255, 245, 237);
     background-color: rgb(20, 7, 63);
     border-radius: 20px;
@@ -70,7 +92,9 @@ li {
     height: auto;
     position: static;
     border: 5px solid #fb5cf9;
-    margin-right: 6%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .tabcontent.active {
@@ -79,7 +103,8 @@ li {
 
 .image-button {
     border-radius: 20px;
-    width: 30%; 
+    flex: 0 0 auto;
+    width: 30vw; 
     aspect-ratio: 1/1;
     border: none;
     background-color: rgb(20, 7, 63);
@@ -95,19 +120,21 @@ li {
 #button1 {
     background-image: url('button1.png'); 
     animation-delay: 0s;
-    margin-left: 2.5%;
 }
 
 #button2 {
     background-image: url('button2.png');
-    animation-delay: 1s;
-     margin-left: 2.5%;
+    animation-delay: 0.75s;
+    margin-right: 1.5%;
+}
+
+#button2.active-tab-btn {
+    margin-left: 5%;
 }
 
 #button3 {
     background-image: url('button3.png');
-    animation-delay: 2s;
-    margin-left: 2.5%;
+    animation-delay: 1.5s;
 }
 
 .image-button:active {
@@ -151,13 +178,24 @@ body {
 }
 
 .button-container {
-    position: relative; 
     margin-top: 11%;
-    min-height: 220px;
     display: flex;
-    justify-content: flex-start;
     align-items: flex-start; 
+}
+
+.button-row {
+    display: flex;
+    flex-direction: column;
     gap: 20px;
+    flex: 0 0 auto;
+    margin-left: 2%;
+    margin-right: 3%;
+}
+
+@media (min-width: 600px) {
+    .button-row {
+        flex-direction: row;
+    }
 }
 
 @media (max-width: 768px) {
@@ -203,7 +241,187 @@ body {
     border-radius: 14px;
     color: rgb(255, 245, 237);
     width: 90%;
+    max-width: 600px;         /* Optional: limit max width */
     text-align: center;
-    padding: 1.5vw;
-    margin-bottom: 1.5vw;
+    padding: 1.8vw;
+    margin-bottom: 2vh;
+    margin-left: auto;        /* Center horizontally */
+    margin-right: auto;       /* Center horizontally */
+    margin-top: 1vh;
+}
+
+.bio-contents {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    margin-left: 1vw;        /* Center horizontally */
+    margin-right: 1vw;       /* Center horizontally */
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.bio-contents p {
+    margin: 0;
+    text-align: start;
+    line-height: 1.4;
+}
+
+.bio-pic {
+    width: 13vw;
+    height: auto;
+    border-radius: 16px;
+    border: 2.5px solid #fb5cf9;
+    object-fit: cover;
+    justify-content: center;
+}
+
+.tabcontent {
+    display: none;
+    color: rgb(255, 245, 237);
+    background-color: rgb(20, 7, 63);
+    border-radius: 20px;
+    padding: 15px 30px 5px 30px;
+    height: auto;
+    border: 5px solid #fb5cf9;
+    margin-left: -7%;
+    margin-bottom: 5vh;
+    width: 53vw;
+}
+
+#tab2, #tab2-extra {        /* Or your preferred width */
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+}
+
+.tabcontent.active {
+    display: block;
+}
+
+#tab2-extra {
+    margin-left: auto;
+    margin-right: auto;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 82.5vw;
+    margin-top: 7.5vh;
+}
+
+#tab2-extra.active {
+    display: flex; /* or block, depending on your layout */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.uml {
+    width: 75vw;
+    height:auto;
+    display: flex;
+    border-radius: 16px;
+    margin-bottom: 3vh;
+}
+
+.uml-diagram {
+    display: flex;
+    flex-direction: column;      /* or 'row' if you want horizontal centering */
+    justify-content: center;     /* vertical centering */
+    align-items: center;    
+}
+
+.code-grid {
+  display: none;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2%;
+  width: 80vw;
+  height: 50px;
+  margin: 20px auto;
+  margin-top: -2.5vh;
+  row-gap: 1.8vh; /* Space between rows */
+  column-gap: 3.5%;
+  margin-bottom: 6.5vh;
+}
+
+.small-buttons {
+    background: rgba(251, 92, 249, 0.15);
+  border-radius: 15px;
+  border: 2.5px solid #fb5cf9;
+  height: auto;
+  padding: 0.5vh 0.5vh 0.5vh 0.5vh;
+width: 100%;           /* or a fixed width */
+height: 100%;          /* or a fixed height */
+    cursor: pointer;
+    z-index: 10;
+}
+
+.code-grid.active {
+  display: grid;
+}
+
+#code-grid button:active {
+    transform: scale(0.95);
+    transition: transform 0s;
+}
+
+.small-buttons-tab {
+    display: none;
+    background: rgba(251, 92, 249, 0.15);
+    color: #fff5ed;
+    border-radius: 20px;
+    padding: 15px 30px 25px 30px;
+    width: 82.5vw;
+    margin: 24px auto 0 auto;
+    border: 2.5px solid #fb5cf9;
+    font-family: 'Oxanium', sans-serif;
+    font-size: 1.1rem;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 10;
+    position: relative;
+    margin-bottom: -5vh;
+    margin-top: 7vh;
+}
+.small-buttons-tab.active {
+    display: block;
+}
+
+.small-buttons-tab img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1vh;
+    width: 75vw;      /* Set your desired width */
+    height: auto;      /* Maintain aspect ratio */
+    border-radius: 16px; /* Optional: rounded corners */
+}
+
+.small-buttons-tab p {
+    text-align: center;
+    margin-left: 2.5vw;
+    margin-right: 2.5vw;
+}
+
+.code-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2%;
+  width: 80vw;
+  margin: 0 auto 6vh auto;
+  margin-top: 7.5vh;
+  margin-bottom: -5vh
+}
+
+.code-row .button-label {
+    margin-top: 1.5vh;
+    font-style: italic;
+}
+
+.code-row {
+    display: none;
+}
+.code-row.active {
+    display: grid;
 }

@@ -12,64 +12,147 @@
     <script src="script.js"></script>
     <body>
         <audio id="button-click" src="click.mp3" preload="auto"></audio>
-    <script>
-        // Preload audio on page load
-        window.addEventListener('DOMContentLoaded', function() {
-            const audio = document.getElementById('button-click');
-            audio.load();
-        });
+        <script>
+            // Preload audio on page load
+            window.addEventListener('DOMContentLoaded', function() {
+                const audio = document.getElementById('button-click');
+                audio.load();
+            });
 
-        function playButtonSound() {
-            const audio = document.getElementById('button-click');
-            audio.pause(); // Stop if already playing
-            audio.currentTime = 0; // Rewind to start
-            audio.play();
-        }
-    </script>
+            function playButtonSound() {
+                const audio = document.getElementById('button-click');
+                audio.pause(); // Stop if already playing
+                audio.currentTime = 0; // Rewind to start
+                audio.play();
+            }
+        </script>
         <div class="intro">
             <img src="pinkstar.png" class="star">
             <h1 id="intro-title"><b>Hello, I'm Emma!</b></h1>
             <img src="pinkstar.png" class="star">
         </div>
-        <div class="button-container">
-            <button class="image-button" id="button1" onclick="playButtonSound(); toggleTab(this, 'tab1')"></button>
-            <div id="tab1" class="tabcontent">
-                <div class="tab-intro">
-                    <img src="pinkstar.png" class="star">
-                    <h2>My Biography</h2>
-                    <img src="pinkstar.png" class="star">
-                </div>
-                <p>Hi :) My name is Emma Yu, and I’m a sophomore student at Burlingame High School. I’m passionate in graphic, web and 3d design, as well as creative writing, philosophy, mechanical engineering, art and astrophysics. Outside of academics, I like biking, listening to music and dedicating my time, money and soul to FRC robotics.
-                </p>
-                <div class="tabcontent2">
+        <div class = "button-container">
+            <div class="button-row">
+                <button class="image-button" id="button1" onclick="playButtonSound(); toggleTab(this, 'tab1')"></button>
+                <button class="image-button" id="button2" onclick="playButtonSound(); toggleTab(this, 'tab2')"></button>
+                <button class="image-button" id="button3" onclick="playButtonSound(); toggleTab(this, 'tab3')"></button>
+            </div>
+            <div>
+                <div id="tab1" class="tabcontent">
                     <div class="tab-intro">
                         <img src="pinkstar.png" class="star">
-                        <h2>Favorites <3</h2>
+                        <h2>My Biography</h2>
                         <img src="pinkstar.png" class="star">
                     </div>
-                        <li>colors: red velvet, yellow ochre, violet, ballpoint-pen-blue</li>
+                    <div class= "bio-contents">
+                        <img src="ohlookitsme.JPG" class="bio-pic">
+                        <p>Hi :) My name is Emma Yu, and I’m a sophomore student at Burlingame High School. I’m passionate in graphic, web and 3d design, as well as creative writing, philosophy, mechanical engineering, art and astrophysics. Outside of academics, I like biking, listening to music and dedicating my time, money and soul to FRC robotics.
+                    </div>
+                    </p>
+                    <div class="tabcontent2">
+                        <div class="tab-intro">
+                            <img src="pinkstar.png" class="star">
+                            <h2>Favorites <3</h2>
+                            <img src="pinkstar.png" class="star">
+                        </div>
+                            <li><b>| colors |</b> red velvet, violet, ballpoint-pen-blue</li>
+                            <li>
+                                <b>| foods | </b>tonkotsu ramen, birthday cake pops, mango sago, takoyaki, chocolate chip cookies
+                            </li>
+                            <li>
+                                <b>| music artists |</b> coldplay, aespa, radiohead, G.E.M, arcane, toby fox, train, the crane wives
+                            </li>
+                            <li>
+                                <b>| robo pickup line | </b><i>"i must be a broken climber because it was very obvious when I fell for you ;)"</i>
+                            </li>
+                    </div>
                 </div>
-            </div>
-
-            <button class="image-button" id="button2" onclick="playButtonSound(); toggleTab(this, 'tab2')"></button>
-            <div id="tab2" class="tabcontent">
-                <div class="tab-intro">
-                    <img src="pinkstar.png" class="star">
-                    <h2>APCS Final</h2>
-                    <img src="pinkstar.png" class="star">
+                <div id="tab3" class="tabcontent">
+                    <div class="tab-intro">
+                        <img src="pinkstar.png" class="star">
+                        <h2>Media Links</h2>
+                        <img src="pinkstar.png" class="star">
+                    </div>
+                    <p>this is probably going to be my linkedin and other contact information</p>
                 </div>
-                <p>ahhahahahhaa here's my nonexistent compsci work</p>
-            </div>
-
-            <button class="image-button" id="button3" onclick="playButtonSound(); toggleTab(this, 'tab3')"></button>
-            <div id="tab3" class="tabcontent">
-                <div class="tab-intro">
-                    <img src="pinkstar.png" class="star">
-                    <h2>Media Links</h2>
-                    <img src="pinkstar.png" class="star">
+                <div id="tab2" class="tabcontent">
+                        <div class="tab-intro">
+                            <img src="pinkstar.png" class="star">
+                            <h2>Summary</h2>
+                            <img src="pinkstar.png" class="star">
+                        </div>
+                        <p>Aleksandr Dozorov and I created a Factory that produces Aircraft in Java. Classes Helicopter and Airplane implement Supplier’s method material(), which return material the aircraft made out of, as well as a method garantyYears(), which returns guarantee years on the aircraft. The class Aircraft has sets names, quantity and returns if an Aircraft was tested. The class Airplane extends Aircraft and sets type. Helicopter extends Aircraft and sets maximum carrying capacity. The class Factory contains all the aiplanes produced. The class Factory also has a method setTechnicalName() to remove the nickname, and also has a method removeOldAndProt() which removes prototypes and untested aircraft.</p>
+                    </div>
                 </div>
-                <p>this is probably going to be my linkedin and other contact information</p>
             </div>
         </div>
     </body>
+        <div id="code-grid" class="code-grid">
+            <button class="small-buttons" onclick="playButtonSound(); showSmallButtonsTab(1)"><span class="button-label">Aircraft</span></button>
+            <button class="small-buttons" onclick="playButtonSound(); showSmallButtonsTab(2)"><span class="button-label">Airplanes</span></button>
+            <button class="small-buttons" onclick="playButtonSound(); showSmallButtonsTab(3)"><span class="button-label">Helicopter</span></button>
+            <button class="small-buttons" onclick="playButtonSound(); showSmallButtonsTab(4)"><span class="button-label">Factory</span></button>
+            <button class="small-buttons" onclick="playButtonSound(); showSmallButtonsTab(5)"><span class="button-label">Supplier</span></button>
+            <button class="small-buttons" onclick="playButtonSound(); showSmallButtonsTab(6)"><span class="button-label">Driver</span></button>
+        </div>
+
+        <div id="small-buttons-tab" class="small-buttons-tab"></div>
+        <script>
+            function showSmallButtonsTab(num) {
+                const tab = document.getElementById('small-buttons-tab');
+                const contents = [
+                    `<p>This is a Parent Class which returns and sets the name, quantity, and whether or not the aircraft is tested.</p><img src="apcs/aircraft.png" alt="Aircraft">`,
+                    `<p>Airplane extends Aircraft and sets and returns the type of airplane. Airplane implements the abstract method material() and garantyYears() from the interface Supplier.</p><img src="apcs/airplanes1.png" alt="Airplane1"><img src="apcs/airplanes2.png" alt="Airplane2">`,
+                    `<p>Helicopter extends Aircraft and sets and returns the maximum carrying capacity of the helicopter. Helicopter also implements abstract methods material() and garantyYears() from the interface Supplier.</p><img src="apcs/Helicopter.png" alt="Helicopter">`,
+                    `<p>Factory creates array objects of the class Aircraft and populates it with Airplanes. It also creates an array list object of Aircraft and populates it with Airplanes and Helicopters. Factory also has the method setTechnicalName() to remove nicknames and the method removeOldAndProt() to remove prototypes and untested aircraft.</p><img src="apcs/factory1.png" alt="Factory1"><img src="apcs/factory2.png" alt="Factory2"><img src="apcs/factory3.png" alt="Factory3"><img src="apcs/factory4.png" alt="Factory4">`,
+                    `<p>Supplier is an interface with abstract methods to be used by Helicopter and Airplanes.</p><img src="apcs/supplier.png" alt="Supplier">`,
+                    `<p>The Driver class asks the user if they want to remove nicknames or remove tested aircraft, then runs the program.</p><img src="apcs/driver1.png" alt="Driver1"><img src="apcs/driver2.png" alt="Driver2">`
+                ];
+            if (tab.innerHTML === contents[num - 1] && tab.classList.contains('active')) {
+                tab.classList.remove('active');
+                tab.innerHTML = '';
+            } else {
+                tab.innerHTML = contents[num - 1];
+                tab.classList.add('active');
+            }
+            }
+        </script>
+        <div class="code-row">
+            <button class="small-buttons" onclick="playButtonSound(); showRowTab(1)"><span class="button-label">Output 1</span></button>
+            <button class="small-buttons" onclick="playButtonSound(); showRowTab(2)"><span class="button-label">Output 2</span></button>
+            <button class="small-buttons" onclick="playButtonSound(); showRowTab(3)"><span class="button-label">Output 3</span></button>
+            <button class="small-buttons" onclick="playButtonSound(); showRowTab(4)"><span class="button-label">Output 4</span></button>
+        </div>
+
+        <div id="row-tab" class="small-buttons-tab"></div>
+
+        <script>
+            function showRowTab(num) {
+                const tab = document.getElementById('row-tab');
+                const contents = [
+                    `<p>This output occurs when the user inputs Yes/Yes.</p><img src="apcs/yes yes 1.png" alt="yesyes1"><img src="apcs/yes yes 2.png" alt="yesyes2">`,
+                    `<p>This output occurs when the user inputs No/No.</p><img src="apcs/no no.png" alt="nono">`,
+                    `<p>This output occurs when the user inputs Yes/No.</p><img src="apcs/yes no.png" alt="yesno">`,
+                    `<p>This output occurs when the user inputs No/Yes.</p><img src="apcs/no yes.png" alt="noyes">`
+                ];
+                if (tab.innerHTML === contents[num - 1] && tab.classList.contains('active')) {
+                    tab.classList.remove('active');
+                    tab.innerHTML = '';
+                } else {
+                    tab.innerHTML = contents[num - 1];
+                    tab.classList.add('active');
+                }
+            }
+        </script>
+
+        <div id="tab2-extra" class="tabcontent">
+            <div class="tab-intro">
+                <img src="pinkstar.png" class="star">
+                <h2>UML Diagram</h2>
+                <img src="pinkstar.png" class="star">
+            </div>
+            <div class="uml-diagram">
+                <img src="uml.jpg" class="uml">
+            </div>
+        </div>
 </html>
